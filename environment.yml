@@ -1,4 +1,4 @@
-name: income
+name: LAVA_env
 channels:
   - pytorch
   - anaconda
