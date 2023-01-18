@@ -48,34 +48,20 @@ The raw data in this research is downloaded from [UK Biobank](https://www.ukbiob
 python -m train
 ```
 
-his trains a model with default arguments. To see the arguments and their default values run 
-```
-python -m train --help
-```
-which should show the following
-```
-Options:
-  --exp_name TEXT               Name of the experiment  [default: default_exp]
-  --loss [cross_entropy|focal]  Loss used for training  [default: cross_entropy]
-  --num_hidden_blocks INTEGER   Number of hidden blocks in the classifier [default: 2]
-```
-Any outputs generated during training are saved in `proc_dir/exp_name`
+Any models generated during training are saved in `models` directory
 
-To visualize loss and accuracy curves on tensorboard, go to the experiment directory and run 
-```
-tensorboard --logdir=./
-```
-
-# Testing
+6- Test the model
 
 The model with the best validation performance during training can be loaded up and evaluated on the test set using
 ```
 python -m test
 ```
-Note that this would work only when default arguments were used during training. For training with non-default arguments use
+7- XAI Classification
 ```
-python -m test --exp_name <experiment name> --num_hidden_blocks <number of hidden blocks in the classifier>
+python -m XAI_classification
 ```
+
+Any outputs generated during training are saved in `models` directory
 
 For default arguments the accuracies on various data subsets should be in the ballpark of the following
 
