@@ -64,8 +64,7 @@ python -m test
 The follwoing script is the main brain of the LAVA running XAI Knowledge discovery to predict AD continuum.
 The model with the best validation performance during training can be loaded up and evaluated on the test set using
 ```
-```
-python -m Prediction
+python -m rediction
 ```
 
 Any outputs generated during training are saved in `results` directory
