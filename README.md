@@ -28,8 +28,6 @@ torchvision 0.10.0<br>
 pandas 1.2.4<br>
 numpy 1.20.2<br>
 sklearn 0.23.2<br>
-scipy 1.5.2<br>
-scipy 1.9.0<br>
 matplotlib 3.6.1<br>
 plotly 5.3.1<br>
 scipy 1.9.0<br>
