@@ -20,7 +20,21 @@ conda activate LAVA_env
 
 For more information on conda please refer to [conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html).
 
-**Note:** The `requirements.txt` file lists a lot of dependencies. But most of them are requirements of just a handful of packages that can be found in `install.sh`. This script also shows steps used to create the conda environment from scratch. Ideally executing this script using `bash install.sh` should produce a similar environment but may result in packages with different version numbers.
+**Note:** The `requirements.txt` file lists a lot of dependencies. But most of them are requirements of just a handful of packages necessary for running this project. You might create your conda environment manualy and install the following requiements; it should produce a similar environment but may result in packages with different version numbers.
+Required libraries:
+
+torch 1.9.0
+torchvision 0.10.0
+pandas 1.2.4
+numpy 1.20.
+sklearn 0.23.2
+scipy 1.5.2
+scipy 1.9.0
+matplotlib 3.6.1
+plotly 5.3.1
+scipy 1.9.0
+seaborn 0.11.2
+
 
 
 ## Specify file paths
@@ -34,12 +48,20 @@ For more information on conda please refer to [conda docs](https://docs.conda.io
 
 You will need to modify `download_dir`,`proc_dir`, and `exp_dir` according to your own machine.
 
-4- Download and preprocess data
+## Download and preprocess data
 The raw data in this research is downloaded from [UK Biobank](https://www.ukbiobank.ac.uk/) Resource under application number 48388.
 
-5- Train the model 
+## Train the model 
 ```
 python -m train
+```
+## Test the model
+```
+python -m test
+```
+## Knowledge discovery (AD continuum prediction)
+```
+python -m Prediction
 ```
 
 Any models generated during training are saved in `models` directory
@@ -54,16 +76,15 @@ python -m test
 ```
 python -m XAI_classification
 ```
+Any outputs generated during training are saved in `results` directory
 
-Any outputs generated during training are saved in `models` directory
+For default arguments the accuracies of the 5-fold cross validation should be in the ballpark of the following
 
-For default arguments the accuracies on various data subsets should be in the ballpark of the following
-
-|Train|Val|Test|
-|---|---|---|
-|86.17|85.05|84.65|
+|Test-Fold 1|Test-Fold 2|Test-Fold 3|Test-Fold 4|Test-Fold 5|
+|---|---|---|---|---|
+|0.80|0.68|0.80|0.75|0.72|
 
 **A note on reproducibility:** Reproducing the above numbers is possible only if all of the following are true:
-- random seeds in the `preprocess.py` and `train.py` scripts are set to `0`
-- `train_val_split` in `LAVA.yml` is set to `0.8`
+- random seeds in the scripts are set to .....
+- `train_val_split`....
 - default arguments are used during training
