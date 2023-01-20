@@ -9,24 +9,18 @@ If you use LAVA in your research, please cite our preliminary work published in 
 {TBD}
 
 ## Installation
-Follow the following steps to re-produce experimental results 
-
-1- Install [python 3.8.1](https://www.python.org/downloads) 
-
-2- Install [conda](https://docs.conda.io/projects/conda/en/latest/index.html)
-
-3- Create and activate virtual environement. The file `environmental.yml` in this project's root folder contians the list of requirements. Running following command wil create a conda virtual environement and will install all dependencies.
+The following command uses the file `environmental.yml` in this project's root folder to create a conda virtual environement namend `LAVA_env` with all dependencies installed.
 ```
 conda env create -f environment.yml
 ```
-Activate the environment
+Activate the environment.
 ```
 conda activate LAVA_env
 ```
 
 For more information on conda please refer to [conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html).
 
-**Note:** The `environment.yml` file lists a lot of dependencies. But most of them are requirements of just a handful of packages that can be found in `install.sh`. This script also shows steps used to create the conda environment from scratch. Ideally executing this script using `bash install.sh` should produce a similar environment but may result in packages with different version numbers.
+**Note:** The `requirements.txt` file lists a lot of dependencies. But most of them are requirements of just a handful of packages that can be found in `install.sh`. This script also shows steps used to create the conda environment from scratch. Ideally executing this script using `bash install.sh` should produce a similar environment but may result in packages with different version numbers.
 
 
 ## Specify file paths
