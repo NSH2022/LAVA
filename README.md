@@ -55,30 +55,22 @@ The raw data in this research is downloaded from [UK Biobank](https://www.ukbiob
 ```
 python -m train
 ```
+Any models generated during training are saved in `models` directory
 ## Test the model
 ```
 python -m test
 ```
-## Knowledge discovery (AD continuum prediction)
+## Prediction
+The follwoing script is the main brain of the LAVA running XAI Knowledge discovery to predict AD continuum.
+The model with the best validation performance during training can be loaded up and evaluated on the test set using
+```
 ```
 python -m Prediction
 ```
 
-Any models generated during training are saved in `models` directory
-
-6- Test the model
-
-The model with the best validation performance during training can be loaded up and evaluated on the test set using
-```
-python -m test
-```
-7- XAI Classification
-```
-python -m XAI_classification
-```
 Any outputs generated during training are saved in `results` directory
 
-For default arguments the accuracies of the 5-fold cross validation should be in the ballpark of the following
+For default arguments the validation accuracies of the 5-fold cross validation should be in the ballpark of the following
 
 |Test-Fold 1|Test-Fold 2|Test-Fold 3|Test-Fold 4|Test-Fold 5|
 |---|---|---|---|---|
