@@ -1,7 +1,0 @@
-name: LAVA_env
-dependencies:
-  - python>=3.8.1
-  - anaconda
-  - pip
-  - pip:
-    - -r requirements.txt
