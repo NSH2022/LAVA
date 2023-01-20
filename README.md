@@ -21,32 +21,30 @@ conda activate LAVA_env
 For more information on conda please refer to [conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html).
 
 **Note:** The `requirements.txt` file lists a lot of dependencies. But most of them are requirements of just a handful of packages necessary for running this project. You might create your conda environment manualy and install the following requiements; it should produce a similar environment but may result in packages with different version numbers.
-Required libraries:
 
-torch 1.9.0
-torchvision 0.10.0
-pandas 1.2.4
-numpy 1.20.
-sklearn 0.23.2
-scipy 1.5.2
-scipy 1.9.0
-matplotlib 3.6.1
-plotly 5.3.1
-scipy 1.9.0
-seaborn 0.11.2
+Required libraries:<br>
+torch 1.9.0<br>
+torchvision 0.10.0<br>
+pandas 1.2.4<br>
+numpy 1.20.2<br>
+sklearn 0.23.2<br>
+scipy 1.5.2<br>
+scipy 1.9.0<br>
+matplotlib 3.6.1<br>
+plotly 5.3.1<br>
+scipy 1.9.0<br>
+seaborn 0.11.2<br>
 
 
 
 ## Specify file paths
-`LAVA.yml` lists all global constants that will be used in the repository. These constants include:
-- `urls`: URLs where the data is to download data from
-- `download_dir`: where data will be downloaded to on your machine
-- `proc_dir`: where preprocessed data will be saved
-- `exp_dir`: where experiment data will be saved
-- `train_val_split`: fraction of the provided train data to be used for training (the remaining will be used for validation)
-- Names of various `.npy` files used for training/validation/testing. These are all saved in `proc_dir` and will be read by dataloaders.
+You will need to modify the following paths according to your own machine.
+- `data_dir`: where the segemented input images are stored
+- `model_dir`: where the trained models will be saved
+- `out_dir`: where the results of the experiment will be saved.
 
-You will need to modify `download_dir`,`proc_dir`, and `exp_dir` according to your own machine.
+
+
 
 ## Download and preprocess data
 The raw data in this research is downloaded from [UK Biobank](https://www.ukbiobank.ac.uk/) Resource under application number 48388.
