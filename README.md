@@ -6,7 +6,7 @@ LAVA is an XAI framework that aims to exploite neuron-level explanation as auxil
 ![alt text](Images/github.drawio.png)
 ## Citation
 If you use LAVA in your research, please cite our preliminary work published in arXiv.
-{TBD}
+Code release DOI: [![DOI](https://zenodo.org/badge/590054290.svg)](https://zenodo.org/badge/latestdoi/590054290)
 
 ## Installation
 The following command uses the file `environmental.yml` in this project's root folder to create a conda virtual environement named `LAVA_env` with all dependencies installed.
