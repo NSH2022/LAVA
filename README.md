@@ -60,6 +60,10 @@ python -m test
 The follwoing script is the main brain of the LAVA running XAI Knowledge discovery to predict AD continuum.
 The models trained through 5-fold cross-validation paradigm are loaded up and evaluated on the test sets. During the evaluation process, top-k critical neurons are identified and ensembled through the network. 
 ```
+python -m prediction --r <number of latent subclasses> --d <number of adjacent neighbors> --k <number of top-k neurons to select at each layer> --s <number of pruning neurons at each step of RFE> --data_dir  <the path to the data directory> --model_dir <the path to the models directory> --out_dir <the path to the results directory>
+```
+Alternatively, you can run the script with all the default parameters.
+```
 python -m prediction
 ```
 
