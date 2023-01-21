@@ -9,7 +9,7 @@ If you use LAVA in your research, please cite our preliminary work published in 
 {TBD}
 
 ## Installation
-The following command uses the file `environmental.yml` in this project's root folder to create a conda virtual environement namend `LAVA_env` with all dependencies installed.
+The following command uses the file `environmental.yml` in this project's root folder to create a conda virtual environement named `LAVA_env` with all dependencies installed.
 ```
 conda env create -f environment.yml
 ```
@@ -51,19 +51,19 @@ The raw data in this research is downloaded from [UK Biobank](https://www.ukbiob
 ```
 python -m train
 ```
-Any models generated during training are saved in `models` directory
+Any models generated during training are saved in `models` directory.
 ## Test the model
 ```
 python -m test
 ```
 ## Prediction
 The follwoing script is the main brain of the LAVA running XAI Knowledge discovery to predict AD continuum.
-The models trained through 5-fold cross-validation paradigm are loaded up and evaluated on the test sets. During the evaluation process, top-k critical neurons are identified and ensembled from the network. 
+The models trained through 5-fold cross-validation paradigm are loaded up and evaluated on the test sets. During the evaluation process, top-k critical neurons are identified and ensembled through the network. 
 ```
 python -m prediction
 ```
 
-Any outputs generated during training are saved in `results` directory
+Any outputs generated during training are saved in `results` directory.
 
 For default arguments the validation accuracies of the 5-fold cross validation should be in the ballpark of the following
 
