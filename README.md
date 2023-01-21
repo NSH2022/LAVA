@@ -45,7 +45,7 @@ You will need to modify the following paths according to your own machine.
 
 
 ## Download and preprocess data
-The raw data in this research is downloaded from [UK Biobank](https://www.ukbiobank.ac.uk/) Resource under application number 48388.
+The raw data in this research is downloaded from [UK Biobank](https://www.ukbiobank.ac.uk/) Resource under application number 48388. The preprocessed data can be downloaded from <link to the google drive or dropbox>
 
 ## Train the model 
 ```
