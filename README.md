@@ -50,13 +50,10 @@ The morphological features considered in this paper are the fractal dimension an
 
 
 ## Model training and evaluation
-Our code will employ a five-fold stratified cross validation for AD vs NC. binary classification. PLease refer to
+Our code will employ a five-fold stratified cross validation for AD vs NC. binary classification. Please refer to
 
 ```
-
 cv_train_eval.ipynb
-
-
 ```
 For our dataset, the range of accuracy values generally ranges between 68-80% for each fold, for example,
 
