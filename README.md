@@ -2,7 +2,7 @@
 LAVA: Granular Neuron-Level Explainable AI for Alzheimer’s Disease Assessment from Fundus Images
 
 ## Overview
-LAVA is an XAI framework that aims to exploite neuron-level explanation as auxiliary information during learnign process to make a high-resolution AD continuum prediction. This work is supported by the National Science Foundation under Grant No. (NSF 2123809). This repository is provided to reproduce experimental results for this research work. For more details refer to our paper: {link to the paper}
+LAVA is an XAI framework that aims to exploite neuron-level explanation as auxiliary information during the learning process to make a high-resolution AD continuum prediction. This work is supported by the National Science Foundation under Grant No. (NSF 2123809). This repository is provided to reproduce experimental results for this research work. For more details refer to our paper: {link to the paper}
 ![alt text](Images/github.drawio.png)
 ## Citation
 If you use LAVA in your research, please cite our preliminary work published in arXiv.
@@ -34,30 +34,40 @@ scipy 1.9.0<br>
 seaborn 0.11.2<br>
 
 
-
 ## Specify file paths
 You will need to modify the following paths according to your own machine.
 - `data_dir`: where the segemented input images are stored
 - `model_dir`: where the trained models will be saved
 - `out_dir`: where the results of the experiment will be saved.
 
-
-
-
 ## Download and preprocess data
-The raw data in this research is downloaded from [UK Biobank](https://www.ukbiobank.ac.uk/) Resource under application number 48388. The preprocessed data can be downloaded from <link to the google drive or dropbox>
+The raw data in this research is downloaded from [UK Biobank](https://www.ukbiobank.ac.uk/) Resource under application number 48388. 
 
-## Train the model 
+## Data-preprocessing
+The data will be cropped, vessel-segmented, along with post-processed morphological features. It is recommended to follow the original authors github of the AutoMorph pipeline https://github.com/rmaphoh/AutoMorph for the pre-processing code, details, and guidelines. 
+
+The morphological features considered in this paper are the fractal dimension and vessel density, all others are discarded. 
+
+
+## Model training and evaluation
+Our code will employ a five-fold stratified cross validation for AD vs NC. binary classification. PLease refer to
+
 ```
-python -m train
+
+cv_train_eval.ipynb
+
+
 ```
-Any models generated during training are saved in `models` directory.
-## Test the model
-```
-python -m test
-```
+For our dataset, the range of accuracy values generally ranges between 68-80% for each fold, for example,
+
+|Test-Fold 1|Test-Fold 2|Test-Fold 3|Test-Fold 4|Test-Fold 5|
+|---|---|---|---|---|
+|0.80|0.68|0.80|0.75|0.72|
+
+The random seed in the code will generate consistency in the data randomizaion, but the exact result may vary due to stochastic optimization. The arguments provided in the script were the default arguments used for the paper. 
+
 ## Prediction
-The follwoing script is the main brain of the LAVA running XAI Knowledge discovery to predict AD continuum.
+The following script is the main brain of the LAVA running XAI Knowledge discovery to predict AD continuum.
 The models trained through 5-fold cross-validation paradigm are loaded up and evaluated on the test sets. During the evaluation process, top-k critical neurons are identified and ensembled through the network. 
 ```
 python -m prediction --r <number of latent subclasses> --d <number of adjacent neighbors> --k <number of top-k neurons to select at each layer> --s <number of pruning neurons at each step of RFE> --data_dir  <the path to the data directory> --model_dir <the path to the models directory> --out_dir <the path to the results directory>
@@ -69,13 +79,4 @@ python -m prediction
 
 Any outputs generated during training are saved in `results` directory.
 
-For default arguments the validation accuracies of the 5-fold cross validation should be in the ballpark of the following
 
-|Test-Fold 1|Test-Fold 2|Test-Fold 3|Test-Fold 4|Test-Fold 5|
-|---|---|---|---|---|
-|0.80|0.68|0.80|0.75|0.72|
-
-**A note on reproducibility:** Reproducing the above numbers is possible only if all of the following are true:
-- random seeds in the scripts are set to .....
-- `train_val_split`....
-- default arguments are used during training
