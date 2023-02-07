@@ -5,7 +5,7 @@ LAVA: Granular Neuron-Level Explainable AI for Alzheimer’s Disease Assessment 
 LAVA is an XAI framework that aims to exploite neuron-level explanation as auxiliary information during the learning process to make a high-resolution AD continuum prediction. This work is supported by the National Science Foundation under Grant No. (NSF 2123809). This repository is provided to reproduce experimental results for this research work. For more details refer to our paper: {link to the paper}
 ![alt text](Images/github.drawio.png)
 ## Citation
-If you use LAVA in your research, please cite our preliminary work published in arXiv.
+If you use LAVA in your research, please cite our preliminary work published in [arXiv](https://arxiv.org/pdf/2302.03008.pdf).
 Code release DOI: [![DOI](https://zenodo.org/badge/590054290.svg)](https://zenodo.org/badge/latestdoi/590054290)
 
 ## Installation
