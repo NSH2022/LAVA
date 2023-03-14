@@ -84,7 +84,7 @@ For our dataset, the range of accuracy values generally ranges between 68-80% fo
 
 The random seed in the code will generate consistency in the data randomization, but the exact result may vary due to stochastic optimization. The arguments provided in the script were the default arguments used for the paper. 
 
-The trained models and data files can be found in the Google Drive hosted by the Authors. The content of Google Drives must be downloaded and placed in `data` folder for training the model.
+The trained models and data files can be found in the Google Drive hosted by the Authors. The content of Google Drives must be downloaded and placed in `data` and `models' folders before running the experiments.
 
 ## Feature Attribution
 A visualization script using Guided Backpropagation is provided in
